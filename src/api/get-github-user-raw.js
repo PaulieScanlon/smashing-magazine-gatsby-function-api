@@ -12,19 +12,7 @@ export default async function handler(req, res) {
       username: 'PaulieScanlon'
     });
 
-    res.status(200).json({
-      message: 'A ok!',
-      user: {
-        name: data.name,
-        blog_url: data.blog,
-        bio: data.bio,
-        photo: data.avatar_url,
-        githubUsername: `@${data.login}`,
-        githubUrl: data.html_url,
-        twitterUsername: `@${data.twitter_username}`,
-        twitterUrl: `https://twitter.com/${data.twitter_username}`
-      }
-    });
+    res.status(200).json({ message: 'A ok!', user: data });
   } catch (error) {
     res.status(500).json({ message: 'Error!' });
   }
